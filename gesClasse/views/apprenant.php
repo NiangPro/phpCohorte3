@@ -1,4 +1,3 @@
-<?php require_once('partials/entete.php'); ?>
 
 <div class="card">
     <div class="card-header bg-info">
@@ -31,4 +30,3 @@
     </div>
 </div>
 
-<?php require_once('partials/pied.php'); ?>

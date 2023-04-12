@@ -1,5 +1,3 @@
-<?php require_once('partials/entete.php'); ?>
-
 <div class="card">
     <div class="card-header">
         <div class="row">
@@ -7,7 +5,7 @@
                 <h1>Liste des classes</h1>
             </div>
             <div class="col-md-4 text-md-right">
-                <button class="btn btn-success">Ajouter</button>
+                <a href="?page=classe&type=add" class="btn btn-success">Ajouter</a>
             </div>
         </div>
     </div>
@@ -16,15 +14,20 @@
             <thead>
                 <tr>
                     <th>Nom</th>
-                    <th>Taile</th>
+                    <th>Taille</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr></tr>
+                <?php foreach($classes as $c): ?>
+                    <tr>
+                        <td><?= $c->nom ?></td>
+                        <td><?= $c->taille ?></td>
+                        <td></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
 </div>
 
-<?php require_once('partials/pied.php'); ?>

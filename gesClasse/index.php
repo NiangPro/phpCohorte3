@@ -1,12 +1,29 @@
-<?php require_once('partials/entete.php'); 
-  require_once("includes/database.php");
+<?php
 
-  $classes = getAllClasses();
+require_once("models/database.php");
 
- var_dump($classes[0]->nom) ;
-?>
+// entete 
+ require_once('partials/entete.php'); 
 
-  <h1>Page d'accueil</h1>
+//contenu
+if (isset($_GET["page"])) {
+  switch ($_GET["page"]) {
+    case 'classe':
+      require_once("controllers/classeControlleur.php");
+      break;
+      case 'apprenant':
+        require_once("controllers/apprenantControlleur.php");
+        break;
+    
+    default:
+    require_once('views/home.php'); 
 
-
-<?php require_once('partials/pied.php'); ?>
+    break;
+  }
+}else{
+  require_once('views/home.php'); 
+}
+ 
+ 
+//  pied de page 
+ require_once('partials/pied.php'); 

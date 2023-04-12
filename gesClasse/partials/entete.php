@@ -20,10 +20,10 @@
         <a class="nav-link " href="index.php">Accueil <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="classe.php">Classes</a>
+        <a class="nav-link" href="?page=classe">Classes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="apprenant.php">Apprenants</a>
+        <a class="nav-link" href="?page=apprenant">Apprenants</a>
       </li>
       
     </ul>
