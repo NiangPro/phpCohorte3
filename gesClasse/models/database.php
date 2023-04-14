@@ -34,3 +34,42 @@ function ajoutClasse($nom, $taille)
     }
 }
 
+function getClasseById($id){
+    global $db;
+    try {
+        $q = $db->prepare("SELECT * FROM CLASSE WHERE idClasse = :id");
+
+        $q->execute([
+            "id" => $id]);
+        return $q->fetch(PDO::FETCH_OBJ);
+    } catch (PDOException $e) {
+        die("Erreur : ".$e->getMessage());
+    }
+}
+
+function editClasse($id, $nom, $taille){
+    global $db;
+    try {
+        $q = $db->prepare("UPDATE classe SET nom = :nom, taille =:taille
+        WHERE idClasse = :id");
+        return $q->execute([
+            "nom" => $nom,
+            "taille" => $taille,
+            "id" => $id
+        ]);
+    } catch (PDOException $th) {
+        die("Erreur : ".$th->getMessage());
+    }
+}
+
+function supprimerClasse($id){
+    global $db;
+
+    try {
+        $q = $db->prepare("DELETE FROM classe WHERE idClasse = ?");
+       return  $q->execute([$id]);
+    } catch (PDOException $th) {
+        die("Erreur : ".$th->getMessage());
+    }
+}
+

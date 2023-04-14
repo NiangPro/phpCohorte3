@@ -23,7 +23,10 @@
                     <tr>
                         <td><?= $c->nom ?></td>
                         <td><?= $c->taille ?></td>
-                        <td></td>
+                        <td>
+                            <a href="?page=classe&type=edit&id=<?= $c->idClasse ?>" class="btn btn-success"><i class="fa fa-eye"></i></a>
+                            <a href="?page=classe&delete=<?= $c->idClasse ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
