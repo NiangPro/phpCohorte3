@@ -73,3 +73,21 @@ function supprimerClasse($id){
     }
 }
 
+
+function getAllEleves()
+{
+    global $db;
+
+    try {
+        $q = $db->prepare("SELECT e.ideleve as id, prenom, e.nom as nom, c.nom as nomclasse, datnais, tel, adresse
+        FROM eleve e, classe c
+        WHERE c.idClasse = e.idClasse");
+
+        $q->execute();
+
+        return $q->fetchAll(PDO::FETCH_OBJ);
+    } catch (PDOException $th) {
+        die("Erreur : ".$th->getMessage());
+    }
+}
+

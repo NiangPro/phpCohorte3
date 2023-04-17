@@ -22,6 +22,11 @@ if(isset($_GET["delete"])){
     }
 }
 
+if (isset($_GET["id"])) {
+    var_dump($_GET["id"]);
+    die();
+}
+
 if(isset($_GET["type"])){
     if(isset($_GET["id"])){
         $c = getClasseById($_GET["id"]);

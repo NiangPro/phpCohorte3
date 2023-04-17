@@ -6,7 +6,7 @@
                 <h1 class="text-warning">Liste des apprenants</h1>
             </div>
             <div class="col-md-4 text-md-right">
-                <button class="btn btn-success">Ajouter</button>
+                <a href="?page=apprenant&type=add" class="btn btn-success">Ajouter</a>
             </div>
         </div>
     </div>
@@ -24,7 +24,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr></tr>
+                <?php foreach($eleves as $e): ?>
+                    <tr>
+                        <td><?= $e->prenom ?></td>
+                        <td><?= $e->nom ?></td>
+                        <td><?= $e->tel ?></td>
+                        <td><?= $e->adresse ?></td>
+                        <td><?= $e->nomclasse ?></td>
+                        <td><?= date("d/m/Y", strtotime($e->datnais))  ?></td>
+                        <td></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
